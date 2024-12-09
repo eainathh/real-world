@@ -5,7 +5,6 @@ class LoginPage {
             passwordField: "[name='password']",
             loginButton: ".SignInForm-submit",
             wrongCredentialsAlert: "[data-test='signin-error']",
-            
         }
 
         return selectors;
@@ -13,12 +12,12 @@ class LoginPage {
     }
 
     accessLoginPage() {
-        cy.visit('http://localhost:3001/signin')
+        cy.visit('/signin')
     }
 
     loginWithUser(username, password) {
         cy.get(this.selectorList().usernameField).type(username)
-        cy.get(this.passwordField().passwordField).type(password)
+        cy.get(this.selectorList().passwordField).type(password)
     }
 
     buttonLogin() {
@@ -26,7 +25,11 @@ class LoginPage {
     }
 
     alertWrongCredentials() {
-        cy.get(this.selectorList().loginButton).click()
+        cy.get(this.selectorsList().wrongCredentialsAlert, {
+            timeout: 10000
+        }).should('be.visible');
     }
 
 }
+
+export default LoginPage;
