@@ -2,16 +2,16 @@ import LoginPage from './pages/loginPage';
 
 const loginPage = new LoginPage();
 
-describe('Login com sucesso', () => {
+describe.only('Login com sucesso', () => {
     it.only('Deve fazer login com um usuário válido', () => {
         loginPage.accessLoginPage();
-        loginPage.loginWithUser('teste', 'teste');
+        loginPage.loginWithUser('Pat_Beer77', 's3cret');
         loginPage.buttonLogin();
     });
 });
 
 describe('Tentar fazer login com credenciais inválidas', () => {
-    it.only('Deve fazer login com um usuário válido', () => {
+    it('Deve fazer login com um usuário válido', () => {
         loginPage.accessLoginPage();
         loginPage.loginWithUser('teste1', 'teste1');
         loginPage.buttonLogin();
