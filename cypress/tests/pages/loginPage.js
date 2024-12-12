@@ -25,7 +25,7 @@ class LoginPage {
     }
 
     alertWrongCredentials() {
-        cy.get(this.selectorsList().wrongCredentialsAlert, {
+        cy.get(this.selectorList().wrongCredentialsAlert, {
             timeout: 10000
         }).should('be.visible');
     }
