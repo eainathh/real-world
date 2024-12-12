@@ -9,6 +9,8 @@ class TransactionPage {
         };
     }
 
+
+    
     accessTransactionPage() {
         cy.visit('http://localhost:3000/transaction/new');
     }
