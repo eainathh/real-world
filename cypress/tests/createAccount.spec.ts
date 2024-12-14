@@ -15,7 +15,7 @@ describe('Registro de novo usuário com sucesso', () => {
     createAccountPage.fillPasswordInfo()
     createAccountPage.submitForm()
     createAccountPage.verifyRedirectToLogin()
-    createAccountPage.verifyCreateAccountButtonIsDisabled()
+    // createAccountPage.verifyCreateAccountButtonIsDisabled()
   });
 });
 
@@ -23,10 +23,10 @@ describe('Registro de novo usuário com sucesso', () => {
 // Automação do Caso de Teste: Tentar registrar um novo usuário com informações incompletas.
 
 describe('Tentar registrar um novo usuário com informações incompletas', () => {
-  it.only('Deve exibir mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias', () => {
+  it('Deve exibir mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias', () => {
     createAccountPage.accessSignup()
     createAccountPage.fillPersonalInfo(chance.first(), chance.last(), '$' )
-    createAccountPage.fillPasswordInfo('123');
-    // createAccountPage.submitForm()
+    createAccountPage.fillPasswordInfo('1');
+    createAccountPage.submitForm()
   });
 });

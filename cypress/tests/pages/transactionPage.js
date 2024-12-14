@@ -6,11 +6,13 @@ class TransactionPage {
             amountInput: '#amount',
             descriptionInput: '#transaction-create-description-input',
             submitPaymentButton: '[data-test="transaction-create-submit-payment"]',
+            successIndicator: ".css-1yjlacw",
+
         };
     }
 
 
-    
+
     accessTransactionPage() {
         cy.visit('http://localhost:3000/transaction/new');
     }
@@ -27,6 +29,9 @@ class TransactionPage {
 
     submitPayment() {
         cy.get(this.selectorList().submitPaymentButton).click();
+    }
+    verifyTransactionSuccess() {
+        cy.get(this.selectorList().successIndicator, { timeout: 10000 }).should('be.visible');
     }
 }
 
