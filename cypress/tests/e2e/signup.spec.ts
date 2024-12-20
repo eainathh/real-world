@@ -1,4 +1,4 @@
-import SignupPage from './pages/signupPage';
+import SignupPage from '../pages/signupPage';
 
 const signupPage = new SignupPage();
 
@@ -16,10 +16,9 @@ describe('Criação de conta', () => {
             'teste'       // Confirmação da Senha
         );
 
-        // Submeter o formulário
+        // enviar o formulário
         signupPage.submitSignupForm();
 
-        // Verificar sucesso (adicione validação adicional se necessário)
-        // Exemplo: cy.contains('Conta criada com sucesso').should('be.visible');
+       
     });
 });

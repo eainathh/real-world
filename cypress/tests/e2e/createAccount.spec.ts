@@ -1,4 +1,4 @@
-import CreateAccountPage from './pages/createAccountPage';
+import CreateAccountPage from '../pages/createAccountPage';
 const Chance = require('chance');
 
 const chance = new Chance();
